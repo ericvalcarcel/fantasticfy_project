@@ -10,6 +10,14 @@ const PORT = process.env.PORT || 10000;
 app.use(express.json());
 app.use(cors());
 
+// Middleware para servir archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Manejar solicitud a la raíz
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Esquema de usuario
 const userSchema = new mongoose.Schema({
 
