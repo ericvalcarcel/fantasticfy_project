@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userTableBody = document.getElementById('userTableBody');
   
     const loadUsers = () => {
-      fetch('http://localhost:3000/users')
+      fetch('https://fantasticfy-project.onrender.com/users')
         .then(response => response.json())
         .then(users => {
           userTableBody.innerHTML = '';
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
   
       try {
-        const syncResponse = await fetch('http://localhost:3000/sync', {
+        const syncResponse = await fetch('https://fantasticfy-project.onrender.com/sync', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alert('Usuarios sincronizados correctamente');
         }
   
-        const addUserResponse = await fetch('http://localhost:3000/users', {
+        const addUserResponse = await fetch('https://fantasticfy-project.onrender.com/users', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
